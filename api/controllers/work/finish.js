@@ -6,15 +6,6 @@ module.exports = {
     id: {
       description: 'The ID of the work',
       type: 'number'
-    },
-
-    workLoad: {
-      type: 'number'
-    },
-
-    completeDate: {
-      type: 'string',
-      columnType: 'datetime',
     }
   },
 
@@ -31,12 +22,11 @@ module.exports = {
 
   //todo
   //debugger;
-    console.log('process update work');
-    console.log(inputs.completeDate);
+  // 2018-08-02T15:06:11.841Z
+  // 2018-08-23T17:00:00.000Z
+    console.log('process update work, finish work');
     var valuesToSet = {
-      workLoad: inputs.workLoad,
-      title: inputs.title,
-      completeDate: inputs.completeDate
+      completeDate: new Date().toLocaleString()
     };
     await Work.update({ id: inputs.id }).set(valuesToSet);
     //return exits.success();

@@ -36,7 +36,8 @@ module.exports.routes = {
 
   'GET /work':            { action: 'work/index' },
   'GET /work/edit/:id':    { action: 'work/edit' },
-  'GET /:work/update/:id':    { action: 'work/update' },
+  'PUT /work/update/:id':    { action: 'work/update' },
+  'GET /work/finish/:id':    { action: 'work/finish' },
 
 
   'GET /project':            { action: 'project/index' },

@@ -52,8 +52,10 @@ module.exports.datastores = {
     // url: 'mysql://user:password@host:port/database',
 
     adapter: require('sails-mysql'),
+    //ALTER USER 'demonodejs'@'%' IDENTIFIED WITH mysql_native_password BY 'demonodejs'
     url: 'mysql://demonodejs:demonodejs@localhost:3306/demonodejs',
-
+    // adapter: 'sails-postgresql',
+    // url: 'postgresql://postgres:.@localhost:5432/demo1',
   },
 
 
