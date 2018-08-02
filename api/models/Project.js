@@ -8,6 +8,17 @@
 module.exports = {
 
   attributes: {
+    // Add a reference to works
+    works: {
+      collection: 'work',
+      via: 'project'
+    },
+
+    // Add a reference to User
+    attends: {
+      collection: 'user',
+      via: 'projects'
+    },
 
     name: {
       type: 'string',
@@ -17,8 +28,9 @@ module.exports = {
       example: 'Tomcat'
     },
 
-    startDateOfProject: {
-      type: 'date'
+    startDate: {
+      type: 'string',
+      columnType: 'datetime',
     }
   },
 

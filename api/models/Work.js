@@ -8,27 +8,27 @@
 module.exports = {
 
   attributes: {
+    // Add a reference to User
+    owner: {
+      model: 'user'
+    },
+
+    // Add a reference to Project
+    project: {
+      model: 'project'
+    },
     title: {
       type: 'string',
       required: true,
       maxLength: 200,
     },
     workLoad : {
-      type: 'double',
-      required: true,
+      type: 'number',
     },
-    dateComplete:{
-      type: 'Date',
-      required: true,
+    completeDate:{
+      type: 'string',
+      columnType: 'datetime',
     },
-    id_user:{
-      type: 'Date',
-      required: true,
-    },
-    id_project:{
-      type: 'Date',
-      required: true,
-    }
   },
 
 };

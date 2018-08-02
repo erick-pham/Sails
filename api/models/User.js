@@ -7,7 +7,17 @@
 module.exports = {
 
   attributes: {
+    // Add a reference to Works
+    works: {
+      collection: 'work',
+      via: 'owner'
+    },
 
+    // Add a reference to Project
+    projects: {
+      collection: 'project',
+      via: 'attends'
+    },
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝

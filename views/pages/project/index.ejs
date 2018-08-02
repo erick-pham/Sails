@@ -1,0 +1,25 @@
+<div class="container">
+        <h1>List of Project</h1>
+        <div class="inbox-body">
+                <table class="table table-inbox table-hover">
+                        <tbody>
+                            <tr>
+                                <th>Name</th>
+                                <th>Start Date</th>
+                            </tr>
+                            <% projects.forEach(function(project){ %>
+                                <tr class="" data-id="<%= project.id %>"</tr>
+                                <td>
+                                    <%= project.title %>
+                                </td>
+                                <td>
+                                    <%= work.startDate %>
+                                </td>
+                                </tr>
+                                <% }); %>
+                        </tbody>
+                    </table>
+
+            <p><a href="/project/new">New project</a></p>        
+        </div>
+    </div>
