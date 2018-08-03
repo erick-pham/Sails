@@ -17,5 +17,7 @@ module.exports.policies = {
   'account/logout': true,
   'view-homepage-or-redirect': true,
   'deliver-contact-form-message': true,
-
+  'user/delete': 'isAdmin',
+  // 'admin/user_new': 'isAdmin',
+  // 'admin/user_create': 'isAdmin',
 };

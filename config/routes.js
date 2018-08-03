@@ -14,43 +14,48 @@ module.exports.routes = {
   //  ╦ ╦╔═╗╔╗ ╔═╗╔═╗╔═╗╔═╗╔═╗
   //  ║║║║╣ ╠╩╗╠═╝╠═╣║ ╦║╣ ╚═╗
   //  ╚╩╝╚═╝╚═╝╩  ╩ ╩╚═╝╚═╝╚═╝
-  'GET /':                   { action: 'view-homepage-or-redirect' },
-  'GET /welcome':            { action: 'dashboard/view-welcome' },
+  'GET /': { action: 'view-homepage-or-redirect' },
+  'GET /welcome': { action: 'dashboard/view-welcome' },
 
-  'GET /faq':                { view:   'pages/faq' },
-  'GET /legal/terms':        { view:   'pages/legal/terms' },
-  'GET /legal/privacy':      { view:   'pages/legal/privacy' },
-  'GET /contact':            { view:   'pages/contact' },
+  'GET /faq': { view: 'pages/faq' },
+  'GET /legal/terms': { view: 'pages/legal/terms' },
+  'GET /legal/privacy': { view: 'pages/legal/privacy' },
+  'GET /contact': { view: 'pages/contact' },
 
-  'GET /signup':             { action: 'entrance/view-signup' },
-  'GET /email/confirm':      { action: 'entrance/confirm-email' },
-  'GET /email/confirmed':    { view:   'pages/entrance/confirmed-email' },
+  'GET /signup': { action: 'entrance/view-signup' },
+  'GET /email/confirm': { action: 'entrance/confirm-email' },
+  'GET /email/confirmed': { view: 'pages/entrance/confirmed-email' },
 
-  'GET /login':              { action: 'entrance/view-login' },
-  'GET /password/forgot':    { action: 'entrance/view-forgot-password' },
-  'GET /password/new':       { action: 'entrance/view-new-password' },
+  'GET /login': { action: 'entrance/view-login' },
+  'GET /password/forgot': { action: 'entrance/view-forgot-password' },
+  'GET /password/new': { action: 'entrance/view-new-password' },
 
-  'GET /account':            { action: 'account/view-account-overview' },
-  'GET /account/password':   { action: 'account/view-edit-password' },
-  'GET /account/profile':    { action: 'account/view-edit-profile' },
+  'GET /account': { action: 'account/view-account-overview' },
+  'GET /account/password': { action: 'account/view-edit-password' },
+  'GET /account/profile': { action: 'account/view-edit-profile' },
 
-  'GET /work':            { action: 'work/index' },
-  'GET /work/edit/:id':    { action: 'work/edit' },
-  'PUT /work/update/:id':    { action: 'work/update' },
-  'GET /work/finish/:id':    { action: 'work/finish' },
-  'GET /work/new':    { action: 'work/new' },
-  'POST /work/create':    { action: 'work/create' },
+  'GET /work': { action: 'work/index' },
+  'GET /work/edit/:id': { action: 'work/edit' },
+  'PUT /work/update/:id': { action: 'work/update' },
+  'GET /work/finish/:id': { action: 'work/finish' },
+  'GET /work/new': { action: 'work/new' },
+  'POST /work/create': { action: 'work/create' },
 
-  'GET /plan':            { action: 'plan/index' },
-  'GET /plan/new':    { action: 'plan/new' },
-  'POST /plan/create':    { action: 'plan/create' },
+  'GET /plan': { action: 'plan/index' },
+  'GET /plan/new': { action: 'plan/new' },
+  'POST /plan/create': { action: 'plan/create' },
 
-  'GET /absen':            { action: 'absen/index' },
-  'GET /absen/new':    { action: 'absen/new' },
-  'POST /absen/create':    { action: 'absen/create' },
+  'GET /absen': { action: 'absen/index' },
+  'GET /absen/new': { action: 'absen/new' },
+  'POST /absen/create': { action: 'absen/create' },
 
-  'GET /project':            { action: 'project/index' },
-  'GET /project/new':    { action: 'project/new' },
+
+  'GET /admin/user-new': { action: 'admin/user_new' },
+  'GET /admin/user-create': { action: 'admin/user_create' },
+
+
+  'GET /project': { action: 'project/index' },
+  'GET /project/new': { action: 'project/new' },
 
 
   //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗
@@ -58,15 +63,15 @@ module.exports.routes = {
   //  ╩ ╩╩  ╩  ╚═╝╝╚╝═╩╝╩  ╚═╝╩╝╚╝ ╩ ╚═╝
   // Note that, in this app, these API endpoints may be accessed using the `Cloud.*()` methods
   // from the CloudSDK library.
-  '/api/v1/account/logout':                           { action: 'account/logout' },
-  'PUT   /api/v1/account/update-password':            { action: 'account/update-password' },
-  'PUT   /api/v1/account/update-profile':             { action: 'account/update-profile' },
-  'PUT   /api/v1/account/update-billing-card':        { action: 'account/update-billing-card' },
-  'PUT   /api/v1/entrance/login':                        { action: 'entrance/login' },
-  'POST  /api/v1/entrance/signup':                       { action: 'entrance/signup' },
+  '/api/v1/account/logout': { action: 'account/logout' },
+  'PUT   /api/v1/account/update-password': { action: 'account/update-password' },
+  'PUT   /api/v1/account/update-profile': { action: 'account/update-profile' },
+  'PUT   /api/v1/account/update-billing-card': { action: 'account/update-billing-card' },
+  'PUT   /api/v1/entrance/login': { action: 'entrance/login' },
+  'POST  /api/v1/entrance/signup': { action: 'entrance/signup' },
   'POST  /api/v1/entrance/send-password-recovery-email': { action: 'entrance/send-password-recovery-email' },
-  'POST  /api/v1/entrance/update-password-and-login':    { action: 'entrance/update-password-and-login' },
-  'POST  /api/v1/deliver-contact-form-message':          { action: 'deliver-contact-form-message' },
+  'POST  /api/v1/entrance/update-password-and-login': { action: 'entrance/update-password-and-login' },
+  'POST  /api/v1/deliver-contact-form-message': { action: 'deliver-contact-form-message' },
 
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
@@ -77,7 +82,7 @@ module.exports.routes = {
   //  ╔╦╗╦╔═╗╔═╗  ╦═╗╔═╗╔╦╗╦╦═╗╔═╗╔═╗╔╦╗╔═╗
   //  ║║║║╚═╗║    ╠╦╝║╣  ║║║╠╦╝║╣ ║   ║ ╚═╗
   //  ╩ ╩╩╚═╝╚═╝  ╩╚═╚═╝═╩╝╩╩╚═╚═╝╚═╝ ╩ ╚═╝
-  '/terms':                   '/legal/terms',
-  '/logout':                  '/api/v1/account/logout',
+  '/terms': '/legal/terms',
+  '/logout': '/api/v1/account/logout',
 
 };
