@@ -8,6 +8,12 @@
 module.exports = {
 
   attributes: {
+    // Add a reference to planing
+    plans: {
+      collection: 'plan',
+      via: 'project'
+    },
+
     // Add a reference to works
     works: {
       collection: 'work',

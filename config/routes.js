@@ -38,10 +38,21 @@ module.exports.routes = {
   'GET /work/edit/:id':    { action: 'work/edit' },
   'PUT /work/update/:id':    { action: 'work/update' },
   'GET /work/finish/:id':    { action: 'work/finish' },
+  'GET /work/new':    { action: 'work/new' },
+  'POST /work/create':    { action: 'work/create' },
 
+  'GET /plan':            { action: 'plan/index' },
+  'GET /plan/new':    { action: 'plan/new' },
+  'POST /plan/create':    { action: 'plan/create' },
+
+  'GET /absen':            { action: 'absen/index' },
+  'GET /absen/new':    { action: 'absen/new' },
+  'POST /absen/create':    { action: 'absen/create' },
 
   'GET /project':            { action: 'project/index' },
   'GET /project/new':    { action: 'project/new' },
+
+
   //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗
   //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗
   //  ╩ ╩╩  ╩  ╚═╝╝╚╝═╩╝╩  ╚═╝╩╝╚╝ ╩ ╚═╝

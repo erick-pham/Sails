@@ -1,0 +1,55 @@
+<div class="container">
+    <h1>New a plan info</h1>
+    <hr/>
+    <form method="POST" action="/plan/create">
+        <!-- <div class="form-group">
+            <label for="project">Select a project</label>
+            <select name="project_id" class="form-control select2">
+                <% projects.forEach(function(item){ %>
+                    <option value="<%= item.id %>">
+                        <%= item.name %>
+                    </option>
+                    <% }); %>
+            </select>
+        </div> -->
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" name="title" class="form-control" value="" placeholder="Enter title"  required = "true">
+        </div>
+        <div class="form-group">
+            <label for="workLoad">Workload</label>
+            <input type="number" min="1" value="1" step="any" name="workLoad" class="form-control" value="" placeholder="Enter Workload"  required = "true">
+        </div>
+        <div class="form-group">
+            <label for="workDate">WorkDate</label>
+            <input type="date" name="workDate" class="form-control" value="" strdate=""
+                id="workDate" placeholder="Enter Workdate"  required = "true">
+        </div>
+        <input type="submit" value="Create" class="btn btn-info">
+    </form>
+</div>
+
+<!-- <script>
+    var d = new Date();
+    var str = [d.getFullYear(),d.getMonth(),d.getDay()];
+
+    // var strOut = str[0] + "-";
+
+    // if (str[1].length == 1) {
+    //     strOut = strOut + "0" + str[1];
+    // }
+    // else {
+    //     strOut = strOut + str[1];
+    // }
+
+    // strOut = strOut + "-";
+    // if (str[2].length == 1) {
+    //     strOut = strOut + "0" + str[2];
+    // }
+    // else {
+    //     strOut = strOut + str[2];
+    // }
+    console.log(d.toDateString());
+    console.log(str);
+    //$('#completeDate').val(strOut);
+</script> -->

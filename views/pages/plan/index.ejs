@@ -1,0 +1,32 @@
+<div class="container">
+    <p>
+        <a href="/plan/new">New a plan for project</a>
+    </p>
+    <h1>List of Plan</h1>
+    <div class="inbox-body">
+        <table class="table table-inbox table-hover">
+            <tbody>
+                <tr>
+                    <th>Title</th>
+                    <th>WorkLoad (Hour)</th>
+                    <th>WorkDate</th>
+                </tr>
+                <% plans.forEach(function(plan){ %>
+                    <tr class="" data-id="<%= plan.id %>" </tr>
+                        <td>
+                            <%= plan.title %>
+                        </td>
+                        <td>
+                            <%= plan.workLoad %>
+                        </td>
+                        <td>
+                            <% if (plan.workDate) { %>
+                                <%= plan.workDate.toDateString() %>
+                                    <% } %>
+                        </td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+    </div>
+</div>
