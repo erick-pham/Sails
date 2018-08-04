@@ -50,12 +50,14 @@ module.exports.routes = {
   'POST /absen/create': { action: 'absen/create' },
 
 
-  'GET /admin/user-new': { action: 'admin/user_new' },
-  'GET /admin/user-create': { action: 'admin/user_create' },
+  'GET /admin': { action: 'admin/index' },
+  'GET /admin/user-new': { action: 'admin/user-new' },
+  'GET /admin/user-create': { action: 'admin/user-create' },
 
 
-  'GET /project': { action: 'project/index' },
-  'GET /project/new': { action: 'project/new' },
+  'GET /admin/project': { action: 'admin/project/index' },
+  'GET /admin/project/new': { action: 'admin/project/new' },
+  'POST /admin/project/create': { action: 'admin/project/create' },
 
 
   //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗

@@ -26,7 +26,7 @@ module.exports = {
       via: 'projects'
     },
 
-    name: {
+    title: {
       type: 'string',
       required: true,
       unique: true,
@@ -35,6 +35,10 @@ module.exports = {
     },
 
     startDate: {
+      type: 'string',
+      columnType: 'datetime',
+    },
+    endDate: {
       type: 'string',
       columnType: 'datetime',
     }
