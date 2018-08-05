@@ -32,6 +32,8 @@ module.exports = {
     };
 
     await Absen.create(valuesToCreate);
+
+    //return res.redirect("absen");
     throw { redirect: "/absen" };
   }
 };

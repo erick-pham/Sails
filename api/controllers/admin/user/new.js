@@ -24,7 +24,7 @@ module.exports = {
     exits: {
       success: {
         responseType: 'view',
-        viewTemplatePath: 'pages/admin/user-new'
+        viewTemplatePath: 'pages/admin/user/new'
       },
       notFound: {
         description: 'No user with the specified ID was found in the database.',
@@ -33,7 +33,9 @@ module.exports = {
     },
   
     fn: async function (inputs, exits) {
-      return exits.success();
+      var teams = await Team.find();
+      var positions = await Position.find();
+      return exits.success({teams: teams, positions: positions});
     }
   };
   

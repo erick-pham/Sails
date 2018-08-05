@@ -1,7 +1,19 @@
 SELECT * FROM demonodejs.user;
 SELECT * FROM demonodejs.project;
 SELECT * FROM demonodejs.work;
+SELECT * FROM demonodejs.absen;
 SELECT * FROM demonodejs.plan;
+SELECT * FROM demonodejs.team;
+SELECT * FROM demonodejs.position;
+
+INSERT INTO `demonodejs`.`project`
+(`createdAt`,`updatedAt`,`name`)
+VALUES(current_date(),current_date(),'PM');
+
+INSERT INTO `demonodejs`.`project`
+(`createdAt`,`updatedAt`,`name`)
+VALUES(current_date(),current_date(),'Dev');
+
 
 INSERT INTO `demonodejs`.`project`
 (`createdAt`,

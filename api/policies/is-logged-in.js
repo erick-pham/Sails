@@ -8,8 +8,7 @@
  *   https://sailsjs.com/docs/concepts/policies
  *   https://sailsjs.com/docs/concepts/policies/access-control-and-permissions
  */
-module.exports = async function (req, res, proceed) {
-
+module.exports = async function(req, res, proceed) {
   // If `req.me` is set, then we know that this request originated
   // from a logged-in user.  So we can safely proceed to the next policy--
   // or, if this is the last policy, the relevant action.
@@ -17,11 +16,14 @@ module.exports = async function (req, res, proceed) {
   // > custom hook (`api/hooks/custom/index.js`).
 
   if (req.me) {
+    // check whether email is active?
+    if (req.me.emailStatus == "unconfirmed" && req.path != "/welcome") {
+      return res.redirect("back");
+    }
     return proceed();
   }
 
   //--•
   // Otherwise, this request did not come from a logged-in user.
   return res.unauthorized();
-
 };

@@ -33,6 +33,7 @@ module.exports = {
   },
 
   fn: async function (inputs, exits) {
-    return exits.success();
+    var projects = await Project.find();
+    return exits.success({projects: projects});
   }
 };

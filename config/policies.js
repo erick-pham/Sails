@@ -18,10 +18,5 @@ module.exports.policies = {
   'view-homepage-or-redirect': true,
   'deliver-contact-form-message': true,
  
-  'admin/index': 'is-super-admin',
-  'admin/user-new': 'is-super-admin',
-  'admin/user-create': 'is-super-admin',
-  'admin/project/index': 'is-super-admin',
-  'admin/project/new': 'is-super-admin',
-  'admin/project/create': 'is-super-admin',
+  'admin/*': 'is-super-admin',
 };

@@ -51,8 +51,11 @@ module.exports.routes = {
 
 
   'GET /admin': { action: 'admin/index' },
-  'GET /admin/user-new': { action: 'admin/user-new' },
-  'GET /admin/user-create': { action: 'admin/user-create' },
+  'GET /admin/user': { action: 'admin/user/index' },
+  'GET /admin/user/new': { action: 'admin/user/new' },
+  'POST /admin/user/create': { action: 'admin/user/create' },
+  'GET /admin/user/edit/:userId': { action: 'admin/user/edit' },
+  'PUT /admin/user/update/:userId': { action: 'admin/user/update' },
 
 
   'GET /admin/project': { action: 'admin/project/index' },

@@ -7,6 +7,21 @@
 module.exports = {
 
   attributes: {
+
+    workingDate: {
+      type: 'ref',
+      columnType: 'datetime',
+
+    },
+
+    position: {
+      model: 'position'
+    },
+
+    team: {
+      model: 'team'
+    },
+
     // Add a reference to Works
     plans: {
       collection: 'plan',
@@ -142,7 +157,7 @@ without necessarily having a billing card.`
     emailStatus: {
       type: 'string',
       isIn: ['unconfirmed', 'changeRequested', 'confirmed'],
-      defaultsTo: 'confirmed',
+      defaultsTo: 'unconfirmed',
       description: 'The confirmation status of the user\'s email address.',
       extendedDescription:
         `Users might be created as "unconfirmed" (e.g. normal signup) or as "confirmed" (e.g. hard-coded

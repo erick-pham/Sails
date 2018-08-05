@@ -1,0 +1,45 @@
+<div id="wrapper">
+    <%- partial('../../../partials/admin-sidebar.ejs') %>
+        <div id="content-wrapper">
+            <div class="container-fluid">
+                <!-- Breadcrumbs-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/admin/User">User</a>
+                    </li>
+                </ol>
+                <p>
+                    <a href="/admin/user/new">New a user</a>
+                </p>
+                <h1>List of User</h1>
+                <div class="inbox-body">
+                    <table class="table table-inbox table-hover">
+                        <tbody>
+                            <tr>
+                                <th>Is Super Admin</th>
+                                <th>Full Name</th>
+                                <th>Working Date</th>
+                                <th>Action</th>
+                            </tr>
+                            <% users.forEach(function(item){ %>
+                                <tr class="" data-id="<%= item.id %>" </tr>
+                                    <td>
+                                        <%= item.isSuperAdmin %>
+                                    </td>
+                                    <td>
+                                        <%= item.fullName %>
+                                    </td>
+                                    <td>
+                                        <%= item.emailAddress %>
+                                    </td>
+                                    <td>
+                                            <a href="/admin/user/edit/<%= item.id %>">Edit</a>
+                                        </td>
+                                </tr>
+                                <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+</div>

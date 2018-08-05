@@ -1,5 +1,5 @@
 # test-project
-
+Position.create({name: 'dev'}).fetch().exec(console.log)
 a [Sails v1](https://sailsjs.com) application
 
 

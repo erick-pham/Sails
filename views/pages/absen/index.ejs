@@ -24,7 +24,7 @@
                                     <%= item.reason %>
                                 </td>
                             <td>
-                                    <%= item.approvedBy.fullName %>
+                                    <%= (item.approvedBy) ? 'item.approvedBy.fullName' : '' %>
                             </td>
                         </tr>
                         <% }); %>

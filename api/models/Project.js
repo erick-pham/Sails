@@ -35,11 +35,11 @@ module.exports = {
     },
 
     startDate: {
-      type: 'string',
+      type: 'ref',
       columnType: 'datetime',
     },
     endDate: {
-      type: 'string',
+      type: 'ref',
       columnType: 'datetime',
     }
   },
