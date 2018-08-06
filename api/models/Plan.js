@@ -22,7 +22,7 @@ module.exports = {
 
     workLoad: { type: 'number' },
 
-    workDate: { type: 'ref', columnType: 'datetime' }
+    workDate: { type: 'ref', columnType: 'timestamp' }
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗

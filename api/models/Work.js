@@ -27,7 +27,7 @@ module.exports = {
     },
     completeDate:{
       type: 'ref',
-      columnType: 'datetime',
+      columnType: 'timestamp',
       defaultsTo : null
     },
   },

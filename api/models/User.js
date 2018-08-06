@@ -10,7 +10,7 @@ module.exports = {
 
     workingDate: {
       type: 'ref',
-      columnType: 'datetime',
+      columnType: 'timestamp',
       defaultsTo: new Date(),
     },
 
