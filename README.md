@@ -1,4 +1,5 @@
 # test-project
+User.create({fullName: 'admin', emailAddress: 'admin@gmail.com', password:'$10$0xz.ectAjtJGjE3JWHiIH.THgO9.BnznqS0PSa3R3Vs4ljdPVbBb6', isSuperAdmin: true }).exec(console.log)
 Position.create({name: 'dev'}).fetch().exec(console.log)
 a [Sails v1](https://sailsjs.com) application
 

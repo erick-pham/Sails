@@ -1,0 +1,23 @@
+<div id="wrapper">
+    <!-- Sidebar -->
+    <%- partial('../../../partials/admin-sidebar.ejs') %>
+        <div id="content-wrapper">
+            <div class="container-fluid">
+                <!-- Breadcrumbs-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/admin/team">Team</a>
+                    </li>
+                    <li class="breadcrumb-item active">New</li>
+                </ol>
+
+                <form method="POST" action="/admin/team/create">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" class="form-control" value="" placeholder="Enter Name" required="true">
+                    </div>
+                    <input type="submit" value="Create" class="btn btn-info">
+                </form>
+            </div>
+        </div>
+</div>

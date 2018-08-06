@@ -1,10 +1,11 @@
-SELECT * FROM demonodejs.user;
+SELECT * FROM demonodejs.user;project_attends__user_projects
 SELECT * FROM demonodejs.project;
 SELECT * FROM demonodejs.work;
 SELECT * FROM demonodejs.absen;
 SELECT * FROM demonodejs.plan;
 SELECT * FROM demonodejs.team;
 SELECT * FROM demonodejs.position;
+SELECT * FROM demonodejs.project_attends__user_projects;
 
 INSERT INTO `demonodejs`.`project`
 (`createdAt`,`updatedAt`,`name`)

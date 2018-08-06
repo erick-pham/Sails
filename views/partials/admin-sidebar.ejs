@@ -34,4 +34,16 @@
             <span>Project</span>
         </a>
     </li>
+    <li class="nav-item <%= (req.path.includes('/admin/project')) ? 'active' : ''%>">
+        <a class="nav-link" href="/admin/team">
+            <i class="fas fa-fw fa-tasks"></i>
+            <span>Team</span>
+        </a>
+    </li>
+    <li class="nav-item <%= (req.path.includes('/admin/project')) ? 'active' : ''%>">
+        <a class="nav-link" href="/admin/position">
+            <i class="fas fa-fw fa-tasks"></i>
+            <span>Position</span>
+        </a>
+    </li>
 </ul>

@@ -52,9 +52,9 @@
                     <div class="form-group">
                         <label for="emailStatus">Email Status</label>
                         <select name="emailStatus" class="form-control select2">
-                            <option value="Active">Active
+                            <option value="confirmed" selected="<%= (edited_user[0].emailStatus == 'confirmed') ? 'selected' : ''%>">Confirmed
                             </option>
-                            <option value="NotActive">NotActive
+                            <option value="unconfirmed" selected="<%= (edited_user[0].emailStatus == 'unconfirmed') ? 'selected' : ''%>">UnConfirmed
                             </option>
                         </select>
                     </div>

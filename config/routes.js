@@ -55,7 +55,20 @@ module.exports.routes = {
   'GET /admin/user/new': { action: 'admin/user/new' },
   'POST /admin/user/create': { action: 'admin/user/create' },
   'GET /admin/user/edit/:userId': { action: 'admin/user/edit' },
-  'PUT /admin/user/update/:userId': { action: 'admin/user/update' },
+  'GET /admin/user/update/:userId': { action: 'admin/user/update' },
+
+
+  'GET /admin/team': { action: 'admin/team/index' },
+  'GET /admin/team/new': { action: 'admin/team/new' },
+  'POST /admin/team/create': { action: 'admin/team/create' },
+  'GET /admin/team/edit/:teamId': { action: 'admin/team/edit' },
+  'GET /admin/team/update/:teamId': { action: 'admin/team/update' },
+
+  'GET /admin/position': { action: 'admin/position/index' },
+  'GET /admin/position/new': { action: 'admin/position/new' },
+  'POST /admin/position/create': { action: 'admin/position/create' },
+  'GET /admin/position/edit/:positionId': { action: 'admin/position/edit' },
+  'GET /admin/position/update/:positionId': { action: 'admin/position/update' },
 
 
   'GET /admin/project': { action: 'admin/project/index' },

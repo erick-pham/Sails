@@ -6,67 +6,65 @@
  */
 
 module.exports = {
-  friendlyName: "New the plan info",
-  description: "List works of current user, user must logign.",
+  friendlyName: 'New the plan info',
+  description: 'List works of current user, user must logign.',
 
   inputs: {
     emailAddress: {
       required: true,
-      type: "string",
+      type: 'string',
       isEmail: true,
-      description: "The email address for the new account, e.g. m@example.com.",
-      extendedDescription: "Must be a valid email address."
+      description: 'The email address for the new account, e.g. m@example.com.',
+      extendedDescription: 'Must be a valid email address.'
     },
 
     password: {
       required: true,
-      type: "string",
+      type: 'string',
       maxLength: 200,
-      example: "passwordlol",
-      description: "The unencrypted password to use for the new account."
+      example: 'passwordlol',
+      description: 'The unencrypted password to use for the new account.'
     },
 
     fullName: {
       required: true,
-      type: "string",
-      example: "Frida Kahlo de Rivera",
-      description: "The user's full name."
+      type: 'string',
+      example: 'Frida Kahlo de Rivera',
+      description: 'The user\'s full name.'
     },
 
     position: {
-      type: "number",
+      type: 'number',
       example: 1,
-      description: "The user's position."
+      description: 'The user\'s position.'
     },
     team: {
-      type: "number",
+      type: 'number',
       example: 1,
-      description: "The user's team."
+      description: 'The user\'s team.'
     },
     workingDate: {
-      type: "ref",
-      columnType: "datetime",
+      type: 'ref',
+      columnType: 'datetime',
       example: 1,
-      description: "The user's team."
+      description: 'The user\'s team.'
     },
     emailStatus: {
-      type: "string",
-      example: "confirmed",
-      description: "Email status is confirmed."
+      type: 'string',
+      example: 'confirmed',
+      description: 'Email status is confirmed.'
     }
   },
 
   exits: {
-    success: {
-
-    },
+    success: {},
     redirect: {
       description: 'The requesting user is already created.',
       responseType: 'redirect'
-  },
+    },
     notFound: {
-      description: "No user with the specified ID was found in the database.",
-      responseType: "notFound"
+      description: 'No user with the specified ID was found in the database.',
+      responseType: 'notFound'
     }
   },
 
@@ -85,6 +83,6 @@ module.exports = {
       emailStatus: inputs.emailStatus
     });
     //return res.redirect("/admin/user");
-    throw { redirect: "/admin/user" };
+    throw { redirect: '/admin/user' };
   }
 };

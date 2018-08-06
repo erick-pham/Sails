@@ -1,0 +1,59 @@
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <%- partial('../../../partials/admin-sidebar.ejs') %>
+        <div id="content-wrapper">
+            <div class="container-fluid">
+                <!-- Breadcrumbs-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/admin/position">Position</a>
+                    </li>
+                    <li class="breadcrumb-item active">Edit</li>
+                </ol>
+                <form method="PUT" action="/admin/position/update/<%= position.id %>">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" class="form-control" value="<%= position.name%>" strdate="" placeholder="Enter Name" required="true">
+                    </div>
+                    <div id="input_fields_wrap">
+                        <button id="add_field_button" class="btn btn-info">Add More Fields</button>
+                        <% for(var i =0; i<_.size(position.fields); i++){%>
+                            
+                            <div>
+                                <input type="text" value = "<%= position.fields['field' + i] %>" class="form-control" name="fields[]"/>
+                                <a href="#" class="remove_field">Remove</a>
+                            </div>
+                            <%}%>
+
+                    </div>
+                    <br>
+                    <input type="submit" value="Save" class="btn btn-info">
+                </form>
+            </div>
+        </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+    console.log("aaaaa");
+    var max_fields = 10; //maximum input boxes allowed
+    var wrapper = $("#input_fields_wrap"); //Fields wrapper
+    var add_button = $("#add_field_button"); //Add button ID
+
+    var x = 0; //initlal text box count
+    $(add_button).click(function (e) { //on add input button click
+        e.preventDefault();
+        if (x < max_fields) { //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" class="form-control" name="fields[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+
+    $(wrapper).on("click", ".remove_field", function (e) { //user click on remove text
+        e.preventDefault();
+        $(this).parent('div').remove();
+        x--;
+    })
+
+</script>

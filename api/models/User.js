@@ -11,7 +11,7 @@ module.exports = {
     workingDate: {
       type: 'ref',
       columnType: 'datetime',
-
+      defaultsTo: new Date(),
     },
 
     position: {
@@ -157,7 +157,7 @@ without necessarily having a billing card.`
     emailStatus: {
       type: 'string',
       isIn: ['unconfirmed', 'changeRequested', 'confirmed'],
-      defaultsTo: 'unconfirmed',
+      defaultsTo: 'confirmed',
       description: 'The confirmation status of the user\'s email address.',
       extendedDescription:
         `Users might be created as "unconfirmed" (e.g. normal signup) or as "confirmed" (e.g. hard-coded

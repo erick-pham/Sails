@@ -1,0 +1,37 @@
+<div id="wrapper">
+    <%- partial('../../../partials/admin-sidebar.ejs') %>
+        <div id="content-wrapper">
+            <div class="container-fluid">
+                <!-- Breadcrumbs-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/admin/position">Position</a>
+                    </li>
+                </ol>
+                <p>
+                    <a href="/admin/position/new">New a position</a>
+                </p>
+                <h1>List of Position</h1>
+                <div class="inbox-body">
+                    <table class="table table-inbox table-hover">
+                        <tbody>
+                            <tr>
+                                <th>Name</th>
+                                <th>Action</th>
+                            </tr>
+                            <% positions.forEach(function(item){ %>
+                                <tr class="" data-id="<%= item.id %>" </tr>
+                                    <td>
+                                        <%= item.name %>
+                                    </td>
+                                    <td>
+                                            <a href="/admin/position/edit/<%= item.id %>">Edit</a>
+                                        </td>
+                                </tr>
+                                <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+</div>
