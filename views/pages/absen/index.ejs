@@ -1,19 +1,58 @@
 <div class="container">
-        <p>
-            <a href="/absen/new">Submit a absen</a>
-        </p>
-        <h1>List of Plan</h1>
-        <div class="inbox-body">
-            <table class="table table-inbox table-hover">
-                <tbody>
-                    <tr>
-                        <th>Title</th>
-                        <th>Number Of Days Off</th>
-                        <th>Reason</th>
-                        <th>Approved By</th>
+    <p>
+        <a href="/absen/new">Submit a absen</a>
+    </p>
+    <h1>List of Absen</h1>
+    <div class="inbox-body">
+        <table class="table table-inbox table-hover">
+            <tbody>
+                <tr>
+                    <th>Title</th>
+                    <th>Number Of Days Off</th>
+                    <th>Reason</th>
+                    <th>Approved By</th>
+                </tr>
+                <% absens.forEach(function(item){ %>
+                    <tr class="" data-id="<%= item.id %>" </tr>
+                        <td>
+                            <%= item.title %>
+                        </td>
+                        <td>
+                            <%= item.numberOfDaysOff %>
+                        </td>
+                        <td>
+                            <%= item.reason %>
+                        </td>
+                        <td>
+                            <%= (item.approvedBy) ? item.approvedBy.fullName : '' %>
+                        </td>
                     </tr>
-                    <% absens.forEach(function(item){ %>
+                    <% }); %>
+            </tbody>
+        </table>
+    </div>
+
+    <h1>Confirm absen for the members</h1>
+    <div class="inbox-body">
+        <table class="table table-inbox table-hover">
+            <tbody>
+                <tr>
+                    <th>Name member</th>
+                    <th>Title</th>
+                    <th>Number Of Days Off</th>
+                    <th>Reason</th>
+                    <th>Action</th>
+                </tr>
+
+
+
+
+                <% if(absens_need_accept){%>
+                    <% absens_need_accept.forEach(function(item, i){ %>
                         <tr class="" data-id="<%= item.id %>" </tr>
+                            <td>
+                                <%= item.owner.fullName %>
+                            </td>
                             <td>
                                 <%= item.title %>
                             </td>
@@ -21,14 +60,20 @@
                                 <%= item.numberOfDaysOff %>
                             </td>
                             <td>
-                                    <%= item.reason %>
-                                </td>
+                                <%= item.reason %>
+                            </td>
                             <td>
-                                    <%= (item.approvedBy) ? 'item.approvedBy.fullName' : '' %>
+                                <a href="/absen/accept/<%= item.id%>">Accept</a>
                             </td>
                         </tr>
                         <% }); %>
-                </tbody>
-            </table>
-        </div>
+                            <%}
+
+
+
+%>
+            </tbody>
+        </table>
     </div>
+
+</div>

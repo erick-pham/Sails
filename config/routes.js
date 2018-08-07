@@ -48,6 +48,7 @@ module.exports.routes = {
   'GET /absen': { action: 'absen/index' },
   'GET /absen/new': { action: 'absen/new' },
   'POST /absen/create': { action: 'absen/create' },
+  'GET /absen/accept/:absenId': { action: 'absen/accept' },
 
 
   'GET /admin': { action: 'admin/index' },

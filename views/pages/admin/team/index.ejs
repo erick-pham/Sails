@@ -17,12 +17,24 @@
                         <tbody>
                             <tr>
                                 <th>Name</th>
+                                <th>Member</th>
+                                <th>Leader</th>
                                 <th>Action</th>
                             </tr>
                             <% teams.forEach(function(item){ %>
                                 <tr class="" data-id="<%= item.id %>" </tr>
                                     <td>
                                         <%= item.name %>
+                                    </td>
+                                    <td>
+                                        <% item.members.forEach(function(item2){ %>
+                                            <%= item2.fullName%>,
+                                            <% }); %>
+                                    </td>
+                                    <td>
+                                            <% item.members.forEach(function(item3){ %>
+                                                    <%= (item3.manage_team == item.id) ? item3.fullName+',' : '' %>
+                                                <% }); %>
                                     </td>
                                     <td>
                                             <a href="/admin/team/edit/<%= item.id %>">Edit</a>

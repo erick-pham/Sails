@@ -31,7 +31,7 @@ module.exports = {
     // Note that we don't have to validate that `userId` is a number;
     // the machine runner does this for us and returns `badRequest`
     // if validation fails.
-    var teams = await Team.find();
+    var teams = await Team.find().sort('name ASC').populate('members', { sort: 'fullName ASC' });
     //var user = await User.findOne({ id: inputs.userId });
 
     // If no user was found, respond "notFound" (like calling `res.notFound()`)

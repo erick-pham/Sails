@@ -39,14 +39,36 @@ module.exports = {
     // Note that we don't have to validate that `userId` is a number;
     // the machine runner does this for us and returns `badRequest`
     // if validation fails.
-    var absens;
-    absens = await Absen.find({ owner: this.req.session.userId }).populate('approvedBy');
+    var absens = await Absen.find({ owner: this.req.session.userId }).populate('approvedBy');
+    var absens_need_accept;
+
+    var users = await User.find({id: this.req.session.userId});
+    var current_user = users[0];
+
+    if(current_user.manage_team){
+      var arrUserId =[];
+
+      var membersId = await User.find({
+        select: ['id'], 
+        where: {team: current_user.manage_team}
+      })
+
+
+      membersId.forEach(function(item){
+        arrUserId.push(item.id);
+      });
+      absens_need_accept= await Absen.find({
+        owner: arrUserId,
+        approvedBy: null
+      }).populate('owner');
+    }
+ 
     //var user = await User.findOne({ id: inputs.userId });
 
     // If no user was found, respond "notFound" (like calling `res.notFound()`)
     // if (!user) { return exits.notFound(); }
 
     // Display the welcome view.
-    return exits.success({ absens: absens });
+    return exits.success({ absens: absens, absens_need_accept: absens_need_accept });
   }
 };

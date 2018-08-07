@@ -1,5 +1,5 @@
-<div id="wrapper">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.css" />
+<div id="wrapper" style="min-height: 500px">
     <!-- Sidebar -->
     <%- partial('../../../partials/admin-sidebar.ejs') %>
         <div id="content-wrapper">
@@ -11,14 +11,40 @@
                     </li>
                     <li class="breadcrumb-item active">Edit</li>
                 </ol>
-                <form method="PUT" action="/admin/team/update/<%= edited_team[0].id %>">
+                
+                <form method="PUT" action="/admin/team/update/<%= edited_team.id %>">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" name="name" class="form-control" value="<%= edited_team[0].fullName%>" strdate="" placeholder="Enter Name"
-                            required="true">
+                        <input type="text" name="name" class="form-control" value="<%= edited_team.name%>" placeholder="Enter Name" required="true">
                     </div>
+
+                    <div class="form-group">
+                        <label>Select which members you add to the team</label>
+                        <select id="members" name="members[]" data-placeholder="Select members" multiple class="chosen-select-width" tabindex="16">
+                            <% users.forEach(function(item){ %>
+                            <option value="<%= item.id%>" <%= (edited_team.id == item.team) ? 'selected' : '' %> ><%= item.fullName %> - <%= item.emailAddress%></option>
+                            <% }); %>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                            <label>Select which members who is leader</label>
+                            <select id="leaders" name="leaders[]" data-placeholder="Select leaders" multiple class="chosen-select-width" tabindex="16">
+                                <% users.forEach(function(item){ %>
+                                <option value="<%= item.id%>" <%= (edited_team.id == item.manage_team) ? 'selected' : '' %> ><%= item.fullName %> - <%= item.emailAddress%></option>
+                                <% }); %>
+                            </select>
+                    </div>
+
                     <input type="submit" value="Save" class="btn btn-info">
                 </form>
             </div>
         </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.js"></script>
+
+<script>
+    $('#members').chosen({width: "100%"});
+    $('#leaders').chosen({width: "100%"});
+    </script>

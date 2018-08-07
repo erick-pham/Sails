@@ -22,6 +22,10 @@ module.exports = {
       model: 'team'
     },
 
+    manage_team: {
+      model: 'team'
+    },
+
     // Add a reference to Works
     plans: {
       collection: 'plan',
@@ -65,7 +69,8 @@ module.exports = {
       required: true,
       description: 'Full representation of the user\'s name',
       maxLength: 120,
-      example: 'Lisa Microwave van der Jenny'
+      example: 'Lisa Microwave van der Jenny',
+      unique: true,
     },
 
     isSuperAdmin: {

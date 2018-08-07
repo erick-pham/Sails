@@ -30,7 +30,7 @@
                                         <%= item.fullName %>
                                     </td>
                                     <td>
-                                        <%= item.emailAddress %>
+                                        <%= item.workingDate.toLocaleDateString() %>
                                     </td>
                                     <td>
                                             <a href="/admin/user/edit/<%= item.id %>">Edit</a>

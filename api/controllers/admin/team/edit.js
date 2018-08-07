@@ -16,8 +16,9 @@ module.exports = {
     },
     fn: async function (inputs, exits) {
   
-      var team = await Team.find({ id: inputs.teamId }).limit(1);
-      return exits.success({ edited_team: team });
+      var teams = await Team.find({ id: inputs.teamId }).limit(1);
+      var users = await User.find();
+      return exits.success({ edited_team: teams[0],  users: users});
     }
   };
   

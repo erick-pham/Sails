@@ -26,6 +26,11 @@ module.exports = {
       collection: 'user',
       via: 'team'
     },
+
+    leaders:{
+      collection: 'user',
+      via: 'manage_team'
+    }
   },
 
 };

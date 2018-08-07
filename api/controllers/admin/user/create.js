@@ -69,7 +69,10 @@ module.exports = {
   },
 
   fn: async function(inputs, exits) {
+    console.log("create new user");
+    console.log(inputs.team);
     var newEmailAddress = inputs.emailAddress.toLowerCase();
+
 
     // Build up data for the new user record and save it to the database.
     // (Also use `fetch` to retrieve the new ID so that we can use it below.)

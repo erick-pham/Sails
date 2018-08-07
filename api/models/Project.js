@@ -37,12 +37,12 @@ module.exports = {
     startDate: {
       type: 'ref',
       columnType: 'timestamp',
-      defaultTo: new Date()
+      defaultsTo: new Date()
     },
     endDate: {
       type: 'ref',
       columnType: 'timestamp',
-      defaultTo: new Date()
+      defaultsTo: new Date()
     }
   },
 
