@@ -19,8 +19,7 @@
     "sails-hook-sockets": "^1.4.0",
     "sails-migrations": "^2.1.0",
     "sails-mysql": "1.0.0",
-    "sails-postgresql": "^1.0.1",
-    "faker": "^4.1.0",
+    "sails-postgresql": "^1.0.1"
   },
   "devDependencies": {
     "@sailshq/eslint": "^4.19.3",
