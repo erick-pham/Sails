@@ -252,7 +252,7 @@ module.exports = {
     ***************************************************************************/
     onlyAllowOrigins: [
       'https://example.com',
-      'https://tranquil-forest-47832.herokuapp.com/',
+      'https://tranquil-forest-47832.herokuapp.com',
     ],
 
 
