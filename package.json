@@ -8,9 +8,6 @@
     "@sailshq/connect-redis": "^3.2.1",
     "@sailshq/lodash": "^3.10.3",
     "@sailshq/socket.io-redis": "^5.2.0",
-    "@sailshq/eslint": "^4.19.3",
-    "@sailshq/htmlhint": "^0.9.16",
-    "@sailshq/lesshint": "^4.6.6",
     "async": "2.0.1",
     "current-date": "^0.1.1",
     "faker": "^4.1.0",
@@ -22,14 +19,17 @@
     "sails-hook-seed": "^0.2.6",
     "sails-hook-sockets": "^1.4.0",
     "sails-migrations": "^2.1.0",
-    "sails-mysql": "1.0.0",
-    "sails-postgresql": "^1.0.1"
+    "sails-postgresql": "^1.0.1",
+    "grunt": "1.0.1",
+    "sails-hook-grunt": "^3.0.2"
   },
   "devDependencies": {
     "@sailshq/eslint": "^4.19.3",
     "@sailshq/htmlhint": "^0.9.16",
     "@sailshq/lesshint": "^4.6.6",
-    "nodemon": "^1.18.3"
+    "nodemon": "^1.18.3",
+    "grunt": "1.0.1",
+    "sails-hook-grunt": "^3.0.2"
   },
   "scripts": {
     "start": "NODE_ENV=production node app.js",
