@@ -9,8 +9,6 @@
     "@sailshq/lodash": "^3.10.3",
     "@sailshq/socket.io-redis": "^5.2.0",
     "async": "2.0.1",
-    "current-date": "^0.1.1",
-    "faker": "^4.1.0",
     "sails": "^1.0.2",
     "sails-api-rest": "^0.10.4",
     "sails-hook-apianalytics": "^2.0.0",
@@ -19,9 +17,7 @@
     "sails-hook-seed": "^0.2.6",
     "sails-hook-sockets": "^1.4.0",
     "sails-migrations": "^2.1.0",
-    "sails-postgresql": "^1.0.1",
-    "grunt": "1.0.1",
-    "sails-hook-grunt": "^3.0.2"
+    "sails-postgresql": "^1.0.1"
   },
   "devDependencies": {
     "@sailshq/eslint": "^4.19.3",
