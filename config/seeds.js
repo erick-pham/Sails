@@ -8,23 +8,22 @@
  * http://github.com/frostme/sails-seed
  */
 var faker = require("faker");
-var sails = require("sails");
 module.exports.seeds = {
-    // seeding User
-    overwrite: true,
-    user: {
-      data: [
-        {
-          emailAddress: "admin@gmail.com",
-          fullName: "admin",
-          emailStatus: "confirmed",
-          isSuperAdmin: true,
-          password: "$2a$10$EPqg0D4LBeZpwBVUsUBeNe8VjmpbSliCGE9HGAypFeInUiSKRtubO"
-          //password: sails.helpers.passwords.hashPassword('admin@gmail.com')
-        }
-      ],
-      active: true
-    },
+  // seeding User
+  overwrite: true,
+  user: {
+    data: [
+      {
+        emailAddress: "admin@gmail.com",
+        fullName: "admin",
+        emailStatus: "confirmed",
+        isSuperAdmin: true,
+        password: "$2a$10$EPqg0D4LBeZpwBVUsUBeNe8VjmpbSliCGE9HGAypFeInUiSKRtubO"
+        //password: sails.helpers.passwords.hashPassword('admin@gmail.com')
+      }
+    ],
+    active: true
+  },
 
   team: {
     data: [
@@ -45,5 +44,5 @@ module.exports.seeds = {
       }
     ],
     active: true
-  },
+  }
 };
